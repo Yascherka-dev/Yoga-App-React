@@ -16,7 +16,7 @@ Une application web moderne pour la réservation de cours de yoga, développée 
 - React
 - React Router pour la navigation
 - Styled Components pour le styling
-- Axios pour les appels API
+- UseFtech pour les appels API
 - CSS moderne avec variables CSS
 
 ## 📦 Installation
