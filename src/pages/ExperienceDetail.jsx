@@ -98,14 +98,9 @@ const ExperienceDetail = () => {
   const [reservationSuccess, setReservationSuccess] = useState(false);
 
   const handleBookClick = () => {
-    console.log('Experience avant ouverture du modal:', experience);
     setShowReservation(true);
   };
 
-  const handleReservationSuccess = () => {
-    setShowReservation(false);
-    setReservationSuccess(true);
-  };
 
   if (loading) {
     return <div>Chargement...</div>;
@@ -130,7 +125,7 @@ const ExperienceDetail = () => {
           <div className="price">{experience.price} €</div>
           <div className="category">{experience.category}</div>
           <p className="description">{experience.description}</p>
-          <BookButton onClick={() => setShowReservation(true)}>
+          <BookButton onClick={handleBookClick}>
             Réserver cette expérience
           </BookButton>
         </InfoContainer>
@@ -139,8 +134,10 @@ const ExperienceDetail = () => {
       {showReservation && (
         <Reservation
           experience={experience}
-          onClose={() => setShowReservation(false)}
-          onSuccess={handleReservationSuccess}
+          onClose={() => {
+            setShowReservation(false);
+            setReservationSuccess(true);
+          }}
         />
       )}
 

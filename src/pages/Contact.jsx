@@ -138,15 +138,15 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Ici, vous pouvez ajouter la logique pour envoyer le formulaire
-    console.log('Données du formulaire:', formData);
-    // Réinitialiser le formulaire
+    // TODO: Ajouter la logique pour envoyer le formulaire à l'API
+    // Réinitialiser le formulaire après envoi
     setFormData({
       name: '',
       email: '',
       subject: '',
       message: ''
     });
+    // Afficher un message de succès (à implémenter)
   };
 
   return (
